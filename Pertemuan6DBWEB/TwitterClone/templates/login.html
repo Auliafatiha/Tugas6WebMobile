@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="dasar">
+        <!-- Menambahkan id pada form -->
+        <form id="loginForm">
+            <img src="..\Icon\LogoX.png" alt="twitter" class="logo">
+            <label for="username">Username</label>
+            <input name="username" id="username" placeholder="Masukkan username" required><br>
+        
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Masukkan password" required><br>
+        
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").onsubmit = async function (e) {
+            e.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Mengirim data login menggunakan fetch
+            const response = await fetch("/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },  // Menggunakan x-www-form-urlencoded
+                body: new URLSearchParams({ username, password }).toString(),
+                credentials: "include"  // WAJIB untuk menerima cookie dari server
+            });
+
+            // Cek apakah login berhasil dan arahkan ke home.html
+            if (response.ok) {
+                window.location.href = "/home"; // redirect setelah login
+            } else {
+                alert("Login gagal");
+            }
+        };
+    </script>
+</body>
+
+<style>
+    .dasar {
+        display: flex;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        padding: 10px;
+        color: white;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 300px;
+        margin: 100px auto;
+        padding: 20px;
+        border: 1px solid gray;
+        border-radius: 20px;
+        background-color: black;
+        align-items: center;
+    }
+
+    input, button {
+        display: flex;
+        margin-top: 10px;
+        width: 100%;
+        padding: 8px;
+        font-family: sans-serif;
+        border-radius: 5px;
+        justify-content: center;
+        background-color: transparent;
+        color: white;
+    }
+
+    button {
+        border-radius: 20px;
+    }
+
+    button:hover {
+        background-color: white;
+        color: black;
+    }
+
+    .logo {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 30px;
+    }
+
+    label {
+        align-self: flex-start;
+    }
+</style>
+
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+</head>
+
+<body>
+<!-- 19. "Terkadang hidup itu seperti komedi, kalau tidak tertawa ya ditertawakan."
+
+20. "Bercanda tidak boleh kelewatan, jika kelewatan jadinya jauh mutarnya." -->
+
+    <div class="header">
+            <div class="back"><img src="{{ url_for('static', filename='Icon/mail.png') }}" alt="Lokasi">
+
+            </div>   
+            <div class="tengah">
+                <div class="akun">Dilarang keras</div>
+                <div class="totalpostingan">20 Postingan</div>
+            </div>
+            <div class="search">
+                <div class="ikon"><img src="{{ url_for('static', filename='Icon/loupe.png') }}" alt="ikon"></div>
+                <input type="text" class="teks" placeholder="Mencari">
+            </div>
+            
+            </div>
+      </div>
+    
+      <!-- 26. "Pengalaman adalah guru terbaik, tapi guru yang baik belum tentu berpengalaman."
+
+      27. "Jika Tuhan belum menjawab doamu, bersabarlah, dan ingat bukan cuman kamu saja yang berdoa." -->
+
+      <div class="container">
+        <!-- Sidebar Kiri -->
+                <div class="aside">
+                    <div class="logotwitter">
+                        <img src="{{ url_for('static', filename='Icon/kucing.jpg') }}" alt="logo">
+                    </div>
+                    <nav>
+                        <ul>
+                            <li class="menu-item"><img src="{{ url_for('static', filename='Icon/home.png') }}" alt="Home"> Home</li>
+                            <li class="menu-item"><img src="{{ url_for('static', filename='Icon/search.png') }}" alt="Search"> Search</li>
+                            <li class="menu-item"><img src="{{ url_for('static', filename='Icon/notificaton.png') }}" alt="Notification"> Notifikasi</li>
+                            <li class="menu-item"><img src="{{ url_for('static', filename='Icon/grok.png') }}" alt="Grok"> Grok</li>
+                            <li class="menu-item"><img src="{{ url_for('static', filename='Icon/user.png') }}" alt="User"> Profil</li>
+                            <li class="menu-item"><img src="{{ url_for('static', filename='/Icon/more.png') }}" alt="More"> More</li>
+                            <li class="menu-item"><img src="{{ url_for('static', filename='Icon/plus.png') }}" alt="Plus"> Add</li>
+                        </ul>
+                    </nav>
+                    <div class="potoprofil">A</div>
+                </div>
+
+<!-- 28. "Enggak usah mikirin omongan orang. Mereka aja ngomongnya enggak pakai pikiran."
+
+29. "Uang tidak bisa membeli kebahagian, tetapi memiliki uang lebih bahagia dari pada tidak memiliki." -->
+
+                 <!-- Timeline -->
+<div class="timeline">
+    <div class="wadah">
+        <form method="post" class="tweet-form">
+            <div class="wadah2"> 
+                <img src="{{ url_for('static', filename='Icon/pemandangan.jpeg') }}" alt="" class="gambar">
+                <textarea name="content" placeholder="Apa yang sedang terjadi?" rows="3" required></textarea>
+            </div>
+            <div class="ikontambahan">
+                <ul>
+                    <li class="imo"><img src="{{ url_for('static', filename='Icon/image.png') }}" alt="imo"></li>
+                    <li class="imo"><img src="{{ url_for('static', filename='Icon/gif.png') }}" alt="imo"></li>
+                    <li class="imo"><img src="{{ url_for('static', filename='Icon/poll.png') }}" alt="imo"></li>
+                    <li class="imo"><img src="{{ url_for('static', filename='Icon/calendar(1).png') }}" alt="imo"></li>
+                    <li class="imo"><img src="{{ url_for('static', filename='Icon/location(1).png') }}" alt="imo"></li>
+                </ul>
+                <button type="submit">Post</button>
+            </div>
+        </form>
+    </div>
+        
+    <div class="tweet">
+        <h2>Semua Tweet</h2>
+        <div class="bepost">
+            {% for tweet in tweets %}
+            <div class="tweet-card">
+                <div class="tweet-header">
+                    <img src="{{ url_for('static', filename='Icon/pemandangan.jpeg') }}" alt="profile" class="tweet-profile">
+                    <div class="tweet-user-info">
+                        <strong>{{ tweet[1] }}</strong>
+                        <span class="tweet-time">{{ tweet[3] }}</span>
+                    </div>
+                </div>
+                <div class="tweet-content">
+                    {{ tweet[2] }}
+                </div>
+                <div class="kotakomen">
+                  
+                    {% for comment in comments %}
+                        {% if comment[0] == tweet[0] %}
+                            <p style="margin-left: 20px;"><strong>{{ comment[1] }}</strong>: {{ comment[2] }}</p>
+                        {% endif %}
+                    {% endfor %}
+
+                    <form action="{{ url_for('home') }}" method="post" class="formkomen">
+                        <input type="hidden" name="tweet_id" value="{{ tweet[0] }}">
+                        <input type="text" name="comment" placeholder="Tulis Komentar.....">
+                        <button type="submit">Post</button class = "tombolkomen">
+                    </form>
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+</div>
+        
+
+<!-- 41. "Kunci kesehatan cuma satu, yaitu jangan sakit."
+
+42. "Sakit hati dan sakit gigi itu sama-sama berawal dari yang manis."
+
+43. "Tidak ada yang abadi, kecuali perubahan dan pengeluaran." -->
+
+            <!-- Sidebar Kanan -->
+            <div class="sidebar-right">
+                <div class="mungkindisuka">
+                    <div class="pembuka">Anda mungkin suka</div>
+                    <div class="pertama">
+                        <div class="poto1">sosmed</div>
+                        <div class="akun1">
+                            <div class="namaakun">Sosmed Keras</div>
+                            <div class="username">@sosmed67</div>
+                        </div>
+                        <div class="btn1">Mengikuti</div>
+                    </div>
+                    <div class="kedua">
+                        <div class="poto2"><img src="{{ url_for('static', filename='Icon/defo.jpeg') }}" alt="logo"></div>
+                        <div class="akun2">
+                            <div class="namaakun2">Serana</div>
+                            <div class="username2">@seranaberjarak</div>
+                        </div>
+                        <div class="btn2">Mengikuti</div>
+                
+                    </div>
+                    <div class="ketiga">
+                        <div class="poto3">
+                            <img src="{{ url_for('static', filename='Icon/defoto.jpeg') }}" alt="logo"></div>
+                        <div class="akun3">
+                            <div class="namaakun3">Mencari Jarak</div>
+                            <div class="username3">@jaraktempuh_</div>
+                        </div>
+                        <div class="btn3">Mengikuti</div>
+                    </div>
+                    <div class="show">Show more</div>
+                </div>
+                
+                
+                <div class="apa">
+                    <div class="pembuka2">Apa yang terjadi</div>
+                    <div class="keempat">
+                        <div class="trending1">
+                            <div class="trend">Trending di Indonesia </div>
+                            <div class="isi">Lebaran</div>
+                            <div class="post">166.4k Postingan</div>
+                        </div>
+                        <div class="more"><img src="" alt=""></div>
+    
+                    </div>
+                    <div class="kelima">
+                        <div class="trending2">
+                            <div class="trend2">Trending di Indonesia </div>
+                            <div class="isi2">Mudik</div>
+                            <div class="post2">126.4k Postingan</div>
+                        </div>
+                       
+    
+                    </div>
+                    <div class="keenam">
+                        <div class="trending3">
+                            <div class="trend3">Trending di Indonesia </div>
+                            <div class="isi3">Hari Raya</div>
+                            <div class="post3">100.4k Postingan</div>
+                        </div>
+                        
+    
+                    </div>
+    
+                    <div class="show2">Show more</div>
+                </div>
+            </div>
+        </div>
+    
+       
+</body>

@@ -1,0 +1,825 @@
+
+
+
+* {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #15202B;
+    color: white;
+  }
+
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+
+
+.header {
+    display: flex;
+  background-color: #192734;
+  padding: 15px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: 1px solid #38444D;
+  position: s;
+  top: 0;
+  z-index: 100;
+}
+
+
+.back {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+  
+   
+        }
+
+.back img{
+    width: 24px;
+    height: auto;
+}
+
+.back :hover{
+    background: 38444D;
+}
+
+.tengah{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    flex-grow: 1;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.akun{
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    margin-left: 40px;
+ 
+}
+
+.totalpostingan{
+    font-size: 16px;
+    color: grey;
+    margin-top: 5px;
+    margin-left: 40px;
+}
+
+.search{
+    width: 200px;
+    height: 30px;
+    display: flex;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: border 0.3s ease-in-out;
+    background: white;
+    align-items: center;
+    align-self: center;
+    
+    
+}
+
+.ikon img{
+    width: 18px;
+    height: auto;
+    border: none;
+}
+
+.teks {
+    width: 140px;
+    font-size: 16px;
+    color: #536471;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px 10px 10px 10px;
+}
+
+.search:focus-within {
+    border: 2px solid #1DA1F2;
+}
+
+
+/* 12. "Sekali mendayung, dua tiga hari pegelnya enggak hilang-hilang."
+
+13. "Kamu pasti capek ya, setiap pagi harus me-makeup dua wajah sekaligus."
+
+14. "Di dunia ini ada tiga hal yang paling dibenci orang, yaitu otak kosong, omong kosong, dan juga dompet kosong." */
+
+
+/* SiDebar Navigasi Kiri */
+
+        .aside,
+        .timeline,
+        .sidebar-right {
+          background-color: #192734;
+          padding: 15px;
+          border-radius: 15px;
+        }
+
+        .aside {
+            position: sticky;
+            top: 70px;
+            height: calc(100vh - 70px);
+          
+            
+          }
+    
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+   
+    
+}
+
+.menu-item {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 50%;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+
+}
+
+.menu-item:hover {
+    background: #38444D;
+}
+
+.menu-item img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+ 
+   
+}
+
+
+.logotwitter{
+ width: 40px;
+ height: 40px;
+ border-radius: 50%;
+ background: transparent;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ cursor: pointer;
+
+}
+
+.logotwitter img {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+}
+
+.logotwitter:hover{
+ background: #38444D;
+}
+
+.potoprofil {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: black;
+    font-size: 18px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.potoprofil:hover {
+    background: 38444D;
+}
+
+
+/* 16. "Manusia boleh berencana, tapi saldo juga yang menentukan."
+
+17. "Aku tidak sedang menghinamu, aku sedang mendeskripsikan dirimu secara jujur. "
+
+18. "Kalau belajar sering lupa waktu, lupa waktu kalau sudah waktunya belajar." */
+
+
+/* KOnten utama */
+
+
+.timeline .tweet {
+    border-bottom: 1px solid blue;
+    padding: 10px 0;
+  }
+
+  .timeline .tweet:last-child {
+    border: none;
+  }
+
+  .wadah{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 160px;
+    background-color: black;
+    border-radius: 20px;
+    
+  }
+
+
+  .tweet-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: burlywood;
+    color: white;
+    border: none;
+    resize: none;
+    margin-bottom: 10px;
+  }
+
+  .tweet-form button {
+    background-color: gray;
+    border: none;
+    color: white;
+    padding: 6px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+   
+  }
+
+
+  
+   
+  .wadah2{
+    display: flex;
+   margin: 20px 10px 10px 10px;
+   gap: 10px;
+  }
+  .gambar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  .ikontambahan{
+    display: flex;
+    gap: 160px;
+    margin-top: 18px;
+    padding: 10px;
+    margin-left: 50px;
+   
+   
+ 
+  }
+
+  .ikontambahan ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;          /* Biar horizontal */
+    gap: 20px; 
+    
+
+  }
+  .imo img{
+    width: 20px;
+    height: 20px;
+    
+  }
+
+  .bepost {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.tweet-card {
+    background-color: #38444D;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 1px solid #38444D;
+}
+
+.tweet-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.tweet-profile {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.tweet-user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.tweet-user-info strong {
+    font-size: 16px;
+    color: white;
+}
+
+.tweet-time {
+    font-size: 12px;
+    color: #657786;
+}
+
+.tweet-content {
+    font-size: 15px;
+    color: white;
+    line-height: 1.4;
+}
+
+.kotakkomen{
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #e1e8ed; 
+    
+}
+.formkomen{
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+   
+}
+
+ .formkomen [type="text"]{
+    flex: 1;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background-color: transparent;
+    color: white;
+
+ }
+
+.formkomen button{
+    padding: 5px 15px;
+    border-radius: 50px;
+    border: none;
+    background-color: #1da1f2;
+    color: white;
+    cursor: pointer; 
+ 
+}
+
+
+
+
+/* Sidebar Kanan */
+/* 2. "Tertawa bisa jadi obat terbaik. Tapi kalau kamu tertawa tanpa alasan yang jelas, mungkin kamu butuh obat."
+
+3. "Belajarlah dari bulu ketek. Walaupun terhimpit tapi tetap tegar bertahan dan tetap tumbuh." */
+.sidebar-right{
+    position: sticky;
+      top: 70px;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #192734;
+   
+}
+
+.mungkindisuka{
+    background-color: transparent;
+    width: 100%;
+    height: 50%;
+    border-radius: 20px;
+    border: 2px solid gray;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    position: relative;
+    padding: 10px;
+  
+    
+}
+
+.pembuka{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    margin-top: 15px;
+    margin-left: 10px;
+    
+
+}
+
+
+.pertama{
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    width: auto;
+    height: 60px;
+    background: transparent;
+    cursor: pointer;
+    gap: 10px;
+    color: white;
+    
+}
+
+.pertama:hover{
+    background: #38444D;
+}
+
+
+.poto1{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 5px;
+    border-radius: 50%;
+    color: white;
+    background-color: black;
+    margin-left: 10px;
+    
+
+}
+
+.akun1{
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: left;
+    justify-content: flex-end;
+    margin-left: 10px;
+ 
+    
+}
+
+.namaakun{
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.username{
+    color: grey;
+    font-size: 14px;
+    margin-top: 1px;
+}
+
+.btn1{
+    width: 80px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 20px;
+    margin-left: 10px;
+    
+    
+    
+}
+
+.kedua{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    width: auto;
+    height: 60px;
+    background: transparent;
+    cursor: pointer;
+    gap: 10px;
+
+}
+
+.kedua:hover{
+    background: #38444D;
+}
+
+
+.poto2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 10px;
+
+}
+
+.poto2 img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.akun2{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    margin-left: 10px;
+}
+
+.namaakun2{
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.username2{
+    color: grey;
+    font-size: 14px;
+    margin-top: 1px;
+}
+
+.btn2{
+    width: 80px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 20px;
+    
+}
+
+.ketiga{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    width: auto;
+    height: 60px;
+    background: transparent;
+    cursor: pointer;
+    gap: 10px;
+
+
+}
+
+.ketiga:hover{
+    background: #38444D;
+}
+
+.poto3{
+ width: 40px;
+ height: 40px;
+ border-radius: 50%;
+ background: transparent;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ cursor: pointer;
+ margin-left: 10px;
+
+
+}
+
+.poto3 img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+   
+}
+
+.akun3{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    margin-left: 10px;
+}
+
+.namaakun3{
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.username3{
+    color: grey;
+    font-size: 14px;
+    margin-top: 1px;
+}
+
+.btn3{
+    width: 80px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 20px;
+    margin-left: 10px;
+}
+
+.show{
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1DA1F2;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    
+}
+
+.apa{
+    background-color: transparent;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    position: relative;
+
+
+}
+
+.pembuka2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+
+}
+
+.keempat{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    width: auto;
+    height: 60px;
+    background: transparent;
+    cursor: pointer;
+
+
+}
+
+.keempat:hover{
+    background: #38444D;
+}
+
+.trending1{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    margin-left: 10px;
+
+}
+
+.isi{
+    font-size: 16px;
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: bold
+}
+
+.trend, .post{
+    font-size: 14px;
+    color: gray;
+    
+}
+
+.kelima{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    width: auto;
+    height: 60px;
+    background: transparent;
+    cursor: pointer;
+   
+
+}
+
+.kelima:hover{
+    background:#38444D;
+}
+
+.trending2{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    margin-left: 10px;
+
+}
+
+.isi2{
+    font-size: 16px;
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: bold
+}
+
+.trend2, .post2{
+    font-size: 14px;
+    color: gray;
+    
+}
+
+.keenam{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    width: auto;
+    height: 60px;
+    background: transparent;
+    cursor: pointer;
+   
+
+}
+
+.keenam:hover{
+    background:#38444D;
+}
+
+.trending3{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    margin-left: 10px;
+
+}
+
+.isi3{
+    font-size: 16px;
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: bold
+}
+
+.trend3, .post3{
+    font-size: 14px;
+    color: gray;
+    
+}
+
+.show2{
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1DA1F2;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    
+}
